@@ -1,0 +1,51 @@
+<h3>view-bus works!</h3>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+          <div class="content-box">
+<div>
+    <label> <b> Agency Name: </b></label> {{particularBus.agencyName}}
+</div>
+<div>
+    <label> <b>  Bus Number: </b></label> {{particularBus.bus_Id}}
+</div>
+<div>
+    <label> <b> Driver Name: </b></label> {{particularBus.driverName}}
+</div>
+<div>
+    <label> <b> Total Seats: </b></label> {{particularBus.no_Of_Seats}}
+</div>
+<div>
+    <label> <b> Source: </b></label> {{particularBus.source}}
+</div>
+<div>
+    <label> <b> Destination: </b></label> {{particularBus.destination}}
+
+</div>
+<div>
+    <label> <b> Seats-Reserved: </b></label> {{'particularBus.no_Of_Seats_Booked'}}
+</div>
+<div>
+    <label> <b> Seats Available: </b></label> {{'particularBus.no_Of_Seats_Vaccant'}}
+</div>
+<div>
+    <label> <b> Ticket Cost </b></label> {{particularBus.ticket_Price}}
+</div>
+
+<div>
+    <label> <b> Is AcBus: </b></label> {{particularBus.isACBus}}
+</div>
+<div>
+<label> <b> BusRating: </b></label> {{particularBus.rating}}
+</div>
+<div>
+    <button type="button" class="btn-danger" (click)="goToBusData()">Bus Details</button>
+        <br>
+</div></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+        

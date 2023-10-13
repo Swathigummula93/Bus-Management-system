@@ -1,0 +1,98 @@
+
+
+<h2> Bus List </h2>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="text-center">
+        <div class="content-box">
+          
+              <div class="mb-md-5 mt-md-4 pb-5">
+   <h2> BusData </h2>
+  <div class="list row">
+      <div class="col-md-8" >
+          <div class="input-group-append ">
+              <div class="search">
+                  <input type="text" class="search-input" placeholder="search..."  [(ngModel)]="agencyName" >
+                  <a href="#" class="search-icon">
+                      <i class="fa fa-search"></i>
+                  </a>
+              </div>
+            <div class="input-group-append">
+              <button
+                class="btn btn-info"
+                type="button"
+                (click)="searchByAgencyName()"
+              > Search
+              </button>
+            </div>
+           </div> 
+        </div> 
+      </div> 
+      
+   <div class="dropdown">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          sortBy
+        </button> 
+       <div class="dropdown-content">
+        <a (click)="getBusBySorting('costlow')">Cost low to High</a>
+        <a (click)="getBusBySorting('costHigh')">Cost High to Low</a>
+        <a (click)="getBusBySorting('ratinglow')" >Ratings Low to High </a>
+        <a (click)="getBusBySorting('ratingHigh')" >Ratings High to Low</a>
+      </div>
+    </div> 
+  <button class="btn btn-outline-dark" type="button" (click)="getIsAcBus()">isAcBus
+  </button>
+  <button class="btn btn-outline-dark" type="button" (click)="getNonAcBus()">nonAcBus </button> 
+  
+
+
+<table class = "table table-striped" *ngIf="buses && buses.length > 0">
+    <thead>
+        <tr>
+            <th> AgencyName</th>
+            <th> Source</th>
+            <th> Destination</th>
+            <th> NoOFSeats</th>
+            <th> TicketPrice</th>
+            <th> Ratings </th>
+            <th> IsACBus </th>
+            <th> DriverName </th>
+            <th> NoOfTicketsBooked </th>
+            <th> NoOfTicketsVaccant </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let bus of buses" >
+            <td> {{ bus.agencyName }} </td>
+            <td> {{ bus.source }} </td>
+            <td> {{ bus.destination }} </td>
+            <td> {{ bus.no_Of_Seats }} </td>
+            <td> {{ bus.ticket_Price }} </td>
+            <td> {{ bus.rating }} </td>
+            <td> {{ bus.isACBus}}</td>
+            <td> {{ bus.driverName}}</td>
+            <td> {{ bus.no_Of_Tickets_Booked}}</td>
+            <td> {{ bus.no_Of_Tickets_Vaccant}}</td>
+            <button (click) = "updateBus(bus.bus_Id)" class = "btn btn-info" style="margin-left: 10px"> Update</button>
+            <button (click) = "deleteBusById(bus.bus_Id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "viewBus(bus.bus_Id)" class = "btn btn-secondary" style="margin-left: 20px"> View</button> 
+         
+     </tr>
+
+     <tr *ngIf="buses.length !== 0">
+       <button class="m-3 btn btn-sm btn-danger" (click)="deleteAllBusDetails()">
+             Remove All
+           </button>
+              
+        </tr>
+    </tbody>
+</table>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

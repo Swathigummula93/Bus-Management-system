@@ -1,0 +1,84 @@
+<h3>update Bus </h3>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+          <div class="content-box">
+    
+                <div class="mb-md-5 mt-md-4 pb-5">
+<form (ngSubmit) = "onSubmit()">
+    
+    <div class="form-group">
+        <label> agencyName</label>
+        <input type="text" class ="form-control" id = "agencyName"
+            [(ngModel)] = "bus.agencyName" name = "agencyName">
+    </div>
+
+    <div class="form-group">
+        <label> driverName</label>
+        <input type="text" class ="form-control" id = "driverName"
+            [(ngModel)] = "bus.driverName" name = "driverName">
+    </div>
+    <div class="form-group">
+        <label> busNumber</label>
+        <input type="text" class ="form-control" id = "bus_Id"
+            [(ngModel)] = "bus.bus_Id" name = "bus_Id">
+    </div>
+    <div class="form-group">
+        <label> totalSeats</label>
+        <input type="text" class ="form-control" id = "no_Of_Seats"
+            [(ngModel)] = "bus.no_Of_Seats" name = "no_Of_Seats">
+    </div>
+    <div class="form-group">
+        <label> noOfSeatsBooked</label>
+        <input type="text" class ="form-control" id = "no_Of_Seats_Booked"
+            [(ngModel)] = "bus.no_Of_Tickets_Booked" name = "no_Of_Seats_Booked">
+    </div>
+    <div class="form-group">
+        <label> noOfSeatsAvailable</label>
+        <input type="text" class ="form-control" id = "no_Of_Seats_Vaccant"
+            [(ngModel)] = "bus.no_Of_Tickets_Vaccant" name = "no_Of_Seats_Vaccant">
+    </div>
+     <div class="form-group">
+        <label> source</label>
+        <input type="text" class ="form-control" id = "source"
+            [(ngModel)] = "bus.source" name = "source">
+    </div>
+    
+     <div class="form-group">
+        <label> destination</label>
+        <input type="text" class ="form-control" id = "destination"
+            [(ngModel)] = "bus.destination" name = "destination">
+    </div>
+
+    
+    <div class="form-group">
+        <label> ticketCost</label>
+        <input type="text" class ="form-control" id = "ticket_Price"
+            [(ngModel)] = "bus.ticket_Price" name = "ticket_Price">
+    </div>
+
+    <div class="form-group">
+        <label> busRating</label>
+        <input type="text" class ="form-control" id = "rating"
+            [(ngModel)] = "bus.rating" name = "rating">
+    </div>
+
+    <div class="form-check">
+        <label> Type Of buses:</label><br>
+           <input class="form-check-input" type="radio" name = "isACBus"
+               [(ngModel)]="bus.isACBus" value="true" />
+           <label class="form-check-label">isACBus</label><br>
+           <input class="form-check-input" type="radio" name = "isACBus"
+               [(ngModel)]="bus.isACBus" value="false"/>
+           <label class="form-check-label">nonACBus</label>
+       </div>
+       <button class = "btn btn-success" type ="submit">Submit</button>
+    
+</form>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<p>travel-agency-list works!</p>
+<h2> Travel Agency Data</h2>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+          <div class="content-box">
+    
+                <div class="mb-md-5 mt-md-4 pb-5">
+
+<table class = "table table-striped"> 
+    <thead>
+        <tr>
+            <th> travelAgencyOwnerName</th>
+            <th> travelAgencyEmail</th>
+            <th> travelAgencyName</th>  
+            <th> establishedYear</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let travelAgency of travelAgency" >
+            <td> {{ travelAgency.travelAgencyOwnerName}} </td>
+            <td> {{ travelAgency.travelAgencyEmail }} </td>
+            <td> {{ travelAgency.travelAgencyName }} </td>
+            <td> {{ travelAgency.establishedYear}} </td>
+
+            <td>
+                <button (click) = "viewTravelAgency(travelAgency.agencyId)" class="btn btn-secondary" style="margin-left: 10px"> View</button> 
+               <button (click) = "updateTravelAgency(travelAgency.agencyId)" class="btn btn-info" style="margin-left: 10px"> Update</button>
+               <button (click) = "deleteTravelAgency(travelAgency.agencyId)" class="btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="travelAgency.length !== 0">
+          <button class="m-3 btn btn-sm btn-danger" (click)="deleteAllTravelAgencyDetails()">
+                Remove All
+              </button>
+        </tr>
+    </tbody>
+</table>
+                </div>
+          </div></div>
+      </div>
+    </div>
+</section>
